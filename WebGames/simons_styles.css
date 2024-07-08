@@ -4,68 +4,122 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background:  radial-gradient(circle, white, gray); /* Background gradient */
 }
 
 #simon-game {
     text-align: center;
+    background-color: transparent; /* Semi-transparent background to show gradient */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: "none";
 }
 
 #game-board {
     display: grid;
-    grid-template-columns: repeat(2, 100px);
-    grid-template-rows: repeat(2, 100px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 200px);
+    grid-template-rows: repeat(2, 200px);
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-
+#button-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
 #start-btn {
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 18px;
+    font-weight: bold;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
 #start-btn:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+#start-btn:active {
+    transform: translateY(1px); /* Slight downward press effect */
+}
+
+#ret-main-menu-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#ret-main-menu-btn:hover {
     background-color: #45a049;
+}
+
+#ret-main-menu-btn:active {
+    transform: translateY(1px);
+}
+
+.tile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
 }
 
 
 
-.tile.active {
+.tile.show {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
     transform: scale(1.1); /* Add a slight scale effect */
     background-color: #000;
 }
-
-
-.tile {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #000;
+.tile.clicked{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
+    transform: scale(0.909); /* Add a slight scale effect */
+    background-color: #000;
+}
+.tile:hover {
+    transform: scale(1.1);
 }
 
+.tile.blacked {
+    background: linear-gradient(135deg, #2C2C2C, #1A1A1A, #000000, #1A1A1A, #2C2C2C)!important;
+}
 #green {
-    background-color: green;
+    background: linear-gradient(to bottom right, #66bb6a, #43a047); /* Green gradient */
 }
 
 #red {
-    background-color: red;
+    background: linear-gradient(to bottom right, #ef5350, #d32f2f); /* Red gradient */
 }
 
 #yellow {
-    background-color: yellow;
+    background: linear-gradient(to bottom right, #ffee58, #fbc02d); /* Yellow gradient */
 }
 
 #blue {
-    background-color: blue;
+    background: linear-gradient(to bottom right, #42a5f5, #1e88e5); /* Blue gradient */
 }
+#purple {
+    background: linear-gradient(to bottom right, #ce93d8, #8e24aa); /* Light purple to dark purple */
+}
+
+#orange {
+    background: linear-gradient(to bottom right, #ffb74d, #f57c00); /* Light orange to deep orange */
+}
+
